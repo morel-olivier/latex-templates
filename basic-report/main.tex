@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for small lab reports
+%% Olivier Morel
+%% inspired
+%% template from reds institute for syslog
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Paramétrage du papier utilisé
+\documentclass[a4paper,12pt,oneside]{article}
+
+% Ne pas toucher, nécessaire à la mise en forme
+\usepackage[utf8x]{inputenc} 
+\usepackage[T1]{fontenc} % Nouvelle norme pour codage des caractères
+\usepackage{lmodern} % Nouvelle forme de la fonte ComputerModern
+\usepackage[french]{babel} % Règles typographiques françaises, césures
+\usepackage{graphicx} % Insertion images
+\usepackage{float}  % allow to force the placement of picture with 'H'
+\usepackage{epstopdf} % Convertir les images eps vers pdf
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm, showframe=false]{geometry}
+\usepackage{amsmath}
+%\usepackage{hyperref}  % used to produce hyperlink when referencing but those links are marked by big red square on pdf softwares (in theory not when printed)
+\usepackage{pdfpages}   % allow to include multipages pdf in document
+\usepackage{color}  % allow to use colors
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{lastpage}
+
+\epstopdfsetup{outdir=./Images/converted_to_pdf/} % Dossier de sortie des images converties
+\pagenumbering{arabic}
+\renewcommand{\familydefault}{\sfdefault}	% change font to helvetica
+
+% fichier avec les constantes (à adapter pour les étudiants)
+\input{chapitres/constantes.tex}
+
+% Entête et pieds de page (A ADAPTER)
+\pagestyle{empty}
+\usepackage{fancyhdr}
+\setlength{\headheight}{27.06pt}
+\pagestyle{fancy}
+% Entête :
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[L]{Labo\nbrlabo: \titre} 
+\fancyhead[R]{Rapport de laboratoire} 
+% Pied de page
+\fancyfoot{} % clear all footer fields
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[R]{Page \thepage / \pageref{LastPage}} 
+\fancyfoot[L]{HEIG-VD | \nomAuteur }
+
+\begin{document}	
+	% première page
+	\input{chapitres/premiere_page.tex}
+	% enlève le numero sur la premiere page
+	\thispagestyle{empty}
+	\setcounter{page}{1}
+	\newpage
+
+	\input{chapitres/Introduction.tex}
+
+\end{document}
