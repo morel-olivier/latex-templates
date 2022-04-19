@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Template for small lab reports
 %% Olivier Morel
-%% inspired
+%% inspired by
 %% template from reds institute for syslog
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -24,7 +24,7 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{lastpage}
-\usepackage{siunitx}
+\usepackage[load-configurations = abbreviations]{siunitx}	% also load some abbreviations
 
 \epstopdfsetup{outdir=./Images/converted_to_pdf/} % Dossier de sortie des images converties
 \pagenumbering{arabic}
@@ -39,7 +39,8 @@
 	exponent-to-prefix  = true,
 	output-decimal-marker = {.},		% decimal marker will always be printed as a '.'
 	output-complex-root = j,			% imaginary unit will always be 'j'
-	exponent-product = \cdot			% exponant product will be a dot
+	exponent-product = \cdot,			% exponant product will be a dot
+	detect-all							% garde la même fonte que le reste du texte
 }
 
 % fichier avec les constantes (à adapter pour les étudiants)
