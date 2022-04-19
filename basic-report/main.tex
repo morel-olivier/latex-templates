@@ -28,7 +28,7 @@
 
 \epstopdfsetup{outdir=./Images/converted_to_pdf/} % Dossier de sortie des images converties
 \pagenumbering{arabic}
-\renewcommand{\familydefault}{\sfdefault}	% change font to helvetica
+%\renewcommand{\familydefault}{\sfdefault}	% change font to helvetica but can cause warning on some problems
 \sisetup{
 	locale = FR,
 	round-mode = figures,
@@ -63,7 +63,7 @@
 \begin{document}	
 	% première page
 	\input{chapitres/premiere_page.tex}
-	% enlève le numero sur la premiere page
+	% enlève le numéro sur la premiere page
 	\thispagestyle{empty}
 	\setcounter{page}{1}
 	\newpage
