@@ -9,7 +9,7 @@
 \documentclass[a4paper,12pt,oneside]{article}
 
 % Ne pas toucher, nécessaire à la mise en forme
-\usepackage[utf8x]{inputenc} 
+\usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc} % Nouvelle norme pour codage des caractères
 \usepackage{lmodern} % Nouvelle forme de la fonte ComputerModern
 \usepackage[french]{babel} % Règles typographiques françaises, césures
@@ -24,6 +24,7 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{lastpage}
+\usepackage{tabularx}
 \usepackage[load-configurations = abbreviations]{siunitx}	% also load some abbreviations
 
 \epstopdfsetup{outdir=./Images/converted_to_pdf/} % Dossier de sortie des images converties
@@ -63,12 +64,12 @@
 
 \begin{document}	
 	% première page
-	\input{chapitres/premiere_page.tex}
+	\include{chapitres/premiere_page.tex}
 	% enlève le numéro sur la premiere page
 	\thispagestyle{empty}
 	\setcounter{page}{1}
 	\newpage
 
-	\input{chapitres/Introduction.tex}
+	\input{chapitres/introduction.tex}
 
 \end{document}
