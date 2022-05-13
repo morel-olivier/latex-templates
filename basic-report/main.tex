@@ -26,6 +26,13 @@
 \usepackage{lastpage}
 \usepackage{tabularx}
 \usepackage[load-configurations = abbreviations]{siunitx}	% also load some abbreviations
+\usepackage{tikz}
+% Appel du package pythontex 
+\usepackage{pythontex}
+\graphicspath{{./images/}}
+\newcommand{\pyNUM}[2]{\py{'\\num[round-precision = #2]{' + str(#1) + '}'}}
+\newcommand{\pySI}[2]{\py{'\SI{' + str(#1) + '}{#2}'}}
+\newcommand{\capequation}[2]{\begin{center} \small Equation #1 - #2\end{center}}
 
 \epstopdfsetup{outdir=./Images/converted_to_pdf/} % Dossier de sortie des images converties
 \pagenumbering{arabic}
