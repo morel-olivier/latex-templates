@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% cheatsheet-model.tex
+% V1
+%
+% Original Source: Dave Richeson (divisbyzero.com), Dickinson College
+% Modified By: Paul Gessler, Overleaf (overleaf.com)
+% Modified By: Olivier Morel
+% 
+% Feel free to distribute this example, but please keep the referral
+% to divisbyzero.com
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt,a4paper, landscape]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{spverbatim}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[colorlinks=true,urlcolor=olgreen]{hyperref}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+
+\sisetup{
+	locale = FR,
+	round-mode = figures,
+	round-precision = 4,				% 4 digits in total
+	scientific-notation = engineering,	% exponnant by multiple of 3
+	per-mode            = symbol,
+	per-symbol          = /,
+	exponent-to-prefix  = true,
+	output-decimal-marker = {.},		% decimal marker will always be printed as a '.'
+	output-complex-root = j,			% imaginary unit will always be 'j'
+	exponent-product = \cdot,			% exponant product will be a dot
+	detect-all							% garde la même fonte que le reste du texte
+}
+
+% réduit la taille des marges
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{margin=0.4in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+\pagestyle{empty}	% supprime les numéros de pages
+\makeatletter
+
+% adaptation des titres pour être plus petits
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\sffamily\large\color{blue}}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\sffamily\normalsize\itshape\color{cyan}}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\itshape}}
+\makeatother
+\setcounter{secnumdepth}{0}	% suprime les numéros de titres
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+
+\begin{document}
+\footnotesize	% réduit la taille de police
+%\raggedright
+
+% titre
+\begin{center}
+  {\huge\sffamily\bfseries TITRE} \\
+\end{center}
+
+\setlength{\premulticols}{0pt}
+\setlength{\postmulticols}{0pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{1.8em}
+\begin{multicols*}{3}
+
+%--------------------------------------------------------------------------------------------------------------
+
+\section{Energie et puissance}
+
+\subsection{Puissance moyenne}
+
+\begin{tabularx}{\columnwidth}{Xr}
+	$P(t_1, t_2) = \cfrac{1}{t_2 - t_1} \int_{t_1}^{t_2}p(t)\, dt$	& \si{\watt}	\\
+\end{tabularx}
+
+\subsection{Signaux à énergie finie}
+Les signaux périodiques ont forcément une énergie \emph{infinie}
+
+\section{Périodicité discréte}
+Lorsqu'un signal continu $x(t)$ de pulsation $\omega = 2 \pi f$ est échantilloné dans un signal $x[n]$ à une pulsation $\Omega = 2 \pi F_s$, on ne peut pas forcément détecter sa pulsation d'origine.
+
+\[ \cfrac{2\pi k}{N} = \Omega_0\]
+
+\section{Opération élementaire sur les signaux discret}
+\begin{tabularx}{\columnwidth}{Xcr}
+	décalage à gauche (le graph part à droite)	& $x[n-1]$	& $Z^{-1}$	\\
+	décalage à droite (le graph part à gauche)	& $x[n+1]$	& $Z^{+1}$	\\
+\end{tabularx}
+
+\end{multicols*}
+\end{document}
